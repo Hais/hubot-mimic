@@ -1,16 +1,18 @@
 # Description:
+#   A fork of hubot-markov which models not just all messages, but all messages
+#   sent by each particular user. Hubot can now mimic users on command.
 #
 # Dependencies:
-#   hubot-markov
+#   hubot-mimic
 #
 # Configuration:
 #   See configuration of hubot-markov 1.3.0
 #
 # Commands:
-#   hubot mimic <id> [<seed>] - Generate a markov chain, optionally seeded with the provided phrase.
+#   hubot mimic <id> [<seed>] - Generate a markov chain, optionally seeded with the provided phrase, in the style of user with id <id>. Use 'all' to use a model trained on all users' messages.
 #
 # Author:
-#   jfhamlin
+#   jfhamlin (who merely made slight tweaks to the markov.coffee file in the hubot-markov script)
 
 Url = require 'url'
 Redis = require 'redis'

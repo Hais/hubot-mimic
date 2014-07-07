@@ -1,22 +1,22 @@
-# Hubot Markov Model
+# Hubot Mimic
 
 Generates a markov model based on everything that your Hubot sees in your
 chat.
 
 ## Installing
 
-1. Add `hubot-markov` to your `package.json`:
+1. Add `hubot-mimic` to your `package.json`:
 
 ```json
   "dependencies": {
-    "hubot-markov": "~1.3.0"
+    "hubot-mimic": "~0.1.1"
   },
 ```
 
 2. Require the module in `external-scripts.json`:
 
 ```json
-["hubot-markov"]
+["hubot-mimic"]
 ```
 
 3. Run `npm update` and restart your Hubot.
@@ -26,10 +26,13 @@ chat.
 Saying anything at all in chat appends to the model. The robot is always
 watching!
 
-`Hubot: markov` will randomly generate text based on the current contents of
+`Hubot: mimic edith` will randomly generate text based on the current contents of
+its model for the user 'edith'.
+
+`Hubot: mimic all` will randomly generate text based on the current contents of
 its model.
 
-`Hubot: markov your mother is a` will generate a random phrase seeded with
+`Hubot: mimic all your mother is a` will generate a random phrase seeded with
 the phrase you give it. This command might output "your mother is a classy
 lady", for example. Remember: Hubot is an innocent soul, and what he says
 only acts as a mirror for everything in your hearts.

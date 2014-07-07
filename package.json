@@ -1,7 +1,7 @@
 {
   "name": "hubot-mimic",
   "description": "Build a markov model of everything Hubot hears, modeling individual users.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Ash Wilson <smashwilson@gmail.com>",
 
   "contributors": [

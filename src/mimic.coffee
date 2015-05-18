@@ -46,6 +46,13 @@ module.exports = (robot) ->
 
   models = {}
 
+  getModel = (user_name) ->
+    return all_model if user_name == 'all'
+    user = robot.brain.userForName(user_name)
+    return null if !user
+    models[user.id] = models[user.id] or makeNewModel(user.id)
+    return models[user.id]
+
   # NSAbot
   robot.catchAll (msg) ->
     # Return on empty messages
@@ -60,8 +67,8 @@ module.exports = (robot) ->
 
   # Generate markov chains on demand, optionally seeded by some initial state.
   robot.respond /MIMIC\s+(\w+)(\s+(.+))?$/i, (msg) ->
-    user_id = msg.match[1]
-    model = if user_id == 'all' then all_model else models[user_id]
+    user_name = msg.match[1]
+    model = getModel(user_name)
     if not model
       msg.send 'Derp'
     else

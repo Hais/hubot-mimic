@@ -66,7 +66,7 @@ module.exports = (robot) ->
     all_model.learn msg.message.text
 
   # Generate markov chains on demand, optionally seeded by some initial state.
-  robot.respond /MIMIC\s+(\w+)(\s+(.+))?$/i, (msg) ->
+  robot.respond /MIMIC\s+@?(\w+)(\s+(.+))?$/i, (msg) ->
     user_name = msg.match[1]
     model = getModel(user_name)
     if not model

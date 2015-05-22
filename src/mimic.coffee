@@ -50,7 +50,7 @@ module.exports = (robot) ->
     return all_model if user_name == 'all'
     user = robot.brain.userForName(user_name)
     return null if !user
-    models[user.id] = models[user.id] or makeNewModel(user.id)
+    models[user.id] ||= makeNewModel(user.id)
     return models[user.id]
 
   # NSAbot
@@ -59,7 +59,7 @@ module.exports = (robot) ->
     return if !msg.message.text
 
     user = msg.message.user
-    models[user.id] = models[user.id] or makeNewModel(user.id)
+    models[user.id] ||= makeNewModel(user.id)
     model = models[user.id]
 
     model.learn msg.message.text

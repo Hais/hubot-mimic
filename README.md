@@ -9,7 +9,7 @@ chat.
 
 ```json
   "dependencies": {
-    "hubot-mimic": "~0.1.1"
+    "hubot-mimic": "~0.1.2"
   },
 ```
 
